@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Security.Cryptography.X509Certificates;
-using static Commends.ServerSocket;
+using Editor;
 
 Console.WriteLine("正在初始化应用程序");
 Socket socket;
@@ -15,7 +14,7 @@ void StartSocket()
     socket.Bind(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 888));
     Console.WriteLine("开始监听");
     socket.Listen(100);
-    socket.BeginAccept(AcceptCallBack, socket);
+    socket.BeginAccept(Commends.AcceptCallBack, socket);
 }
 
 //弃用
