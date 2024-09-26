@@ -5,10 +5,12 @@ using Editor;
 
 Console.WriteLine("正在初始化应用程序");
 Socket socket;
-Dictionary<String, Socket> Clients = new Dictionary<string, Socket>();
+Dictionary<String, Socket> TCPClients = new Dictionary<string, Socket>();
+Dictionary<string, Socket> UDPClients = new Dictionary<string, Socket>();
+Dictionary<string, Socket> WebClients = new Dictionary<string, Socket>();
 string writekeys;
 
-void StartSocket()
+void StartTCP()
 {
     socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
     socket.Bind(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 888));
@@ -29,7 +31,7 @@ Dictionary<string, Action> helps = new Dictionary<string, Action>();
 Ins_Helps();
 void Ins_Helps()
 {
-    helps.Add("开启服务器", StartSocket);
+    helps.Add("开启TCP服务器", StartTCP);
 }
 
 Console.WriteLine("输入  --help,获取更多信息");
