@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/zefa/Documents/GitHub/Servers/Server/Server.csproj": {}
+    "/Users/zefa/Documents/GitHub/ServersEngine/Server/Server.csproj": {}
   },
   "projects": {
-    "/Users/zefa/Documents/GitHub/Servers/Server/Server.csproj": {
+    "/Users/zefa/Documents/GitHub/ServersEngine/Server/Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/zefa/Documents/GitHub/Servers/Server/Server.csproj",
+        "projectUniqueName": "/Users/zefa/Documents/GitHub/ServersEngine/Server/Server.csproj",
         "projectName": "Server",
-        "projectPath": "/Users/zefa/Documents/GitHub/Servers/Server/Server.csproj",
+        "projectPath": "/Users/zefa/Documents/GitHub/ServersEngine/Server/Server.csproj",
         "packagesPath": "/Users/zefa/.nuget/packages/",
-        "outputPath": "/Users/zefa/Documents/GitHub/Servers/Server/obj/",
+        "outputPath": "/Users/zefa/Documents/GitHub/ServersEngine/Server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/zefa/.nuget/NuGet/NuGet.Config"
