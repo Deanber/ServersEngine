@@ -37,15 +37,15 @@ void Ins_Helps()
 Console.WriteLine("输入  --help,获取更多信息");
 
 
-while(true)
+while (true)
 {
-    writekeys=Console.ReadLine();
+    writekeys = Console.ReadLine();
     switch (helps.ContainsKey(writekeys))
-    { 
-        case  true:
+    {
+        case true:
             helps[writekeys]();
             break;
-        case false :
+        case false:
             Console.WriteLine("未找到相关命令");
             break;
     }
