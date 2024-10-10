@@ -1,7 +1,0 @@
-namespace Editor
-{
-    class UDPServer
-    {
-
-    }
-}
