@@ -1,26 +1,28 @@
 using System.Net;
 using System.Net.Sockets;
-using System.Reflection;
+using Editor;
 
 namespace Editor
 {
     namespace TCP
     {
-        interface Tcp_interface
+
+        public class TcpServer
         {
-            void StartTCP(ref Socket socket, IPEndPoint iPEndPoint);
-            void StartAccept(Socket socket, float waitings);
-        }
-        class TCPSeerver : Tcp_interface
-        {
-            void Tcp_interface.StartTCP(ref Socket socket, IPEndPoint iPEndPoint)
+            public void StartSocket(ref Socket ServerSocket, IPEndPoint iP)
             {
-                socket.Bind(iPEndPoint);
+                ServerSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                ServerSocket.Bind(iP);
+                ServerSocket.Listen(10);
+                ServerSocket.Accept();
             }
-            void Tcp_interface.StartAccept(Socket socket, float waitings)
+            public void send(Socket ServerSocket, byte[] Massage)
             {
-                socket.Listen(100);
-                socket.Accept();
+                ServerSocket.Send(Massage);
+            }
+            public void Receive(Socket ServerSocket, ref byte[] Massage)
+            {
+                ServerSocket.Receive(Massage);
             }
 
         }

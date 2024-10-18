@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 using Editor;
+using Editor.Json;
 
 Console.WriteLine("正在初始化应用程序");
 Socket socket;
@@ -9,15 +10,18 @@ Dictionary<String, Socket> TCPClients = new Dictionary<string, Socket>();
 Dictionary<string, Socket> UDPClients = new Dictionary<string, Socket>();
 Dictionary<string, Socket> WebClients = new Dictionary<string, Socket>();
 string writekeys;
+JsonRead jr = new JsonRead();
+jr.Seriliziable();
 
-void StartTCP()
+
+/*void StartTCP()
 {
     socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
     socket.Bind(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 888));
     Console.WriteLine("开始监听");
     socket.Listen(100);
     socket.BeginAccept(Commends.AcceptCallBack, socket);
-}
+}*/
 
 //弃用
 /*string[] helps =
@@ -28,11 +32,11 @@ void StartTCP()
 };*/
 
 Dictionary<string, Action> helps = new Dictionary<string, Action>();
-Ins_Helps();
-void Ins_Helps()
+//Ins_Helps();
+/*void Ins_Helps()
 {
     helps.Add("开启TCP服务器", StartTCP);
-}
+}*/
 
 Console.WriteLine("输入  --help,获取更多信息");
 
